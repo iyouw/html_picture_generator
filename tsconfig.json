@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "declaration": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
