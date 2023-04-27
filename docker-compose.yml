@@ -1,0 +1,5 @@
+services:
+  picture_generate_app:
+    image: picture-generator
+    ports:
+      - 3001:3000

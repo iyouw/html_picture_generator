@@ -6,7 +6,9 @@
     "dev": "tsc",
     "build": "npm run build:bundle && npm run build:types",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build:bundle": "node scripts/build.mjs"
+    "build:bundle": "node scripts/build.mjs",
+    "build:img": "docker build . -t picture-generator",
+    "dev:img": "docker compose down -v && npm run build:img && docker compose up -d"
   },
   "keywords": [],
   "author": "",
