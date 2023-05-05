@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc",
-    "build": "npm run build:bundle && npm run build:types",
+    "build": "npm run build:bundle",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
     "build:bundle": "node scripts/build.mjs",
     "build:img": "docker build . -t picture-generator",

@@ -1,7 +1,10 @@
 import { join } from "path";
-import { cwd } from "process"
+import { tmpdir } from 'os';
+import { cwd } from "process";
 
 export const ROOT = cwd();
 export const TEMPLATE_DIR = join(ROOT, 'template');
-export const HTML_DIR = join(ROOT, 'html');
-export const PICTURE_DIR = join(ROOT, 'picture');
+
+const TMP_DIR = tmpdir();
+export const HTML_DIR = join(TMP_DIR, 'html');
+export const PICTURE_DIR = join(TMP_DIR, 'picture');

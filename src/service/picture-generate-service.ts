@@ -1,5 +1,5 @@
 
-import { writeFile, rm } from "fs/promises";
+import { rm, writeFile } from "fs/promises";
 import { join } from "path";
 import { v4 as uuidv4} from 'uuid';
 import { HTML_DIR, PICTURE_DIR, TEMPLATE_DIR } from "../env";
@@ -11,6 +11,7 @@ export class PictureGenerateService {
   public static async generate(request: IPictureGenerateRequest): Promise<string> {
     const { templateId, data, option } = request;
     const templateFile = join(TEMPLATE_DIR, `${templateId}.liquid`);
+    
     const htmlFile = join(HTML_DIR, `${uuidv4()}.html`);
     await TemplateEngine.render(templateFile, data, htmlFile);
     const buffer = await PictureGenerator.generate(htmlFile, option);

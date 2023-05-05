@@ -7,9 +7,7 @@ RUN npm run build
 FROM ghcr.io/puppeteer/puppeteer:latest AS production
 WORKDIR /app
 COPY --from=build /build/dist .
-COPY --from=build /root/.cache/puppeteer /root/.cache/puppeteer
 COPY ./template /app/template
-COPY ./html /app/html
-COPY ./picture /app/picture
+
 
 ENTRYPOINT [ "node", "index.js" ]

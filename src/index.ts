@@ -4,6 +4,9 @@ import serve from 'koa-static';
 import bodyParser from 'koa-bodyparser';
 import { router } from './router';
 import { PICTURE_DIR } from './env';
+import { ensurePrerequisite } from './utils/prerequisite';
+
+ensurePrerequisite();
 
 const app = new Koa();
 
